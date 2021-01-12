@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!--meta http-equiv="refresh" content="1;url="-->
+    <title>3-Phase Voltage Analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ZulNs">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="all">
+    <meta name="copyright" content="ZulNs">
+    <link href="../favicon.svg" type="image/svg+xml" rel="icon"/>
+    <link href="../w3css/w3.css" rel="stylesheet"/>
+    <link href="../libs/Chart.js_v2.9.4/Chart.min.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <header class="w3-container w3-black">
+      <div class="w3-panel">
+        <h1>3&#8209;Phase Analysis</h1>
+        <h3>Basic Electrical Power System</h2>
+      </div>
+    </header>
+    
+    <!-- Content Block ------------------------------------------------------------------------------------->
+    
+    <div class="w3-panel w3-padding-16">
+      <div class="w3-cell w3-quarter w3-margin-right">
+        <p>
+          <label>Voltage&nbsp;&Phi;&#8209;N (in&nbsp;Volts)</label>
+          <input class="w3-input w3-border" id="voltage_3p" type="text"/>
+        </p>
+        <p>V<sub>&Phi;N&nbsp;max</sub>&nbsp;= <b><span id="voltage_pnmax"></span>&nbsp;Volts</b></p>
+        <p>V<sub>&Phi;&Phi;&nbsp;rms</sub>&nbsp;= <b><span id="voltage_pprms"></span>&nbsp;Volts</b></p>
+        <p>V<sub>&Phi;&Phi;&nbsp;max</sub>&nbsp;= <b><span id="voltage_ppmax"></span>&nbsp;Volts</b></p>
+        <p class="w3-margin-bottom">
+          <div class="w3-left">
+            <input class="w3-check" id="show_dots_3p" type="checkbox"/>
+            <label>Show&nbsp;dots</label>
+          </div>
+          <div class="w3-right w3-margin-bottom">
+            <input class="w3-check" id="animate_3p" type="checkbox"/>
+            <label>Animate</label>
+          </div>
+        </p>
+      </div>
+      
+      <div class="w3-cell">
+        <div class="w3-card-4" style="width: 600px; height: 400px;">
+          <canvas id="chart_3p"></canvas>
+        </div>
+      </div>
+    </div>
+    
+    <div class="w3-panel">
+      <p><b>Details Table</b></p>
+    </div>
+    
+    <div class="w3-panel">
+      <table class="w3-table w3-striped w3-border w3-bordered" id="details_table_3p">
+        <tbody>
+          <tr>
+            <th class="w3-right-align">Angle</th>
+            <th class="w3-right-align">V<sub>&Phi;1&#8209;N</sub></th>
+            <th class="w3-right-align">V<sub>&Phi;2&#8209;N</sub></th>
+            <th class="w3-right-align">V<sub>&Phi;1&#8209;&Phi;2</sub></th>
+            <th class="w3-right-align">V<sub>&Phi;1&#8209;N</sub><sup>2</sup></th>
+            <th class="w3-right-align">V<sub>&Phi;1&#8209;&Phi;2</sub><sup>2</sup></th>
+          </tr>
+        <tbody>
+      </table>
+    </div>
+    
+    <div class="w3-panel">
+      <p><b>Explanation:</b></p>
+      <p>
+        The last row in the above table was excluded from sum, cause it belongs to next wave cycle.<br/><br/>
+        <span id="explanation_3p"></span>
+      </p>
+    </div>
+    
+    <!-- End of Content Block ------------------------------------------------------------------------------>
+    
+    <footer class="w3-container w3-dark-grey w3-padding-16 w3-margin-top">
+      <p>Copyright (C) ZulNs, 18 December 2020</p>
+      <p>Jurusan Teknik Elektro, Fakultas Teknik, Universitas Negeri Gorontalo</p>
+    </footer>
+    
+    <script src="../libs/Chart.js_v2.9.4/Chart.min.js" type="text/javascript"></script>
+    <script src="sketch.js" type="text/javascript"></script>
+  </body>
+</html>
